@@ -42,19 +42,10 @@ var Task = sequelize.define("Task",
                             });
 
 sequelize
-    .authenticate()
-    .complete(function(err)
-        {
-            if (err)
-            {
-                console.log("Error authenticating with database: " + err);
-            }
-            else
-            {
-                console.log("Connection established.");
-                continueAfterAuthentication();
-            }
-        });
+    .query("SET FOREIGN_KEY_CHECKS = 0")
+    .then(function() { sequelize.sync({force: true}) })
+    .then(function() { sequelize.query("SET FOREIGN_KEY_CHECKS = 1")})
+    .then(createUser);
 
 function continueAfterAuthentication()
 {
@@ -184,5 +175,5 @@ function createTasks()
 
 function queryUsersWithTasks()
 {
-    
+
 }
