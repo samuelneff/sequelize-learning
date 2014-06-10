@@ -3,10 +3,12 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/02-TypeScript/app.js" />
+        <item url="file://$PROJECT_DIR$/03-Security-Injection/app.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/02-TypeScript/app.js" />
+      <root url="file://$PROJECT_DIR$/03-Security-Injection/app.js" />
     </CLASSES>
     <SOURCES />
   </library>
